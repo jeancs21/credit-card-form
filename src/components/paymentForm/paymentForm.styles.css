@@ -1,0 +1,87 @@
+.credit-card__form-container {
+    width: 100%;
+    display: flex;
+    gap: 6rem;
+}
+
+.credit-card {
+    margin-top: 4rem;
+    margin-left: -14rem;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    max-width: 600px;
+    max-height: 500px;
+    align-items: center;
+    align-self: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form__cardholder, .form__card-number {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__bottom {
+    display: flex;
+    gap: 1rem;
+}
+
+.form__bottom--exp-date input {
+    width: 32px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+
+.form__bottom--cvc {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: hsl(278, 68%, 11%);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(206, 206, 206);
+}
+
+button {
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: hsl(278, 71%, 22%);
+    transition-duration: 300ms;
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

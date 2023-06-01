@@ -1,0 +1,145 @@
+.card-container {
+    width: 447px;
+    height: 245px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.slide-in {
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    transform: translatey(0px);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    border-radius: 16px;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% );
+    position: absolute;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-container:hover .card-inner  {
+    transform: rotateY(-180deg);
+}
+
+.card-container.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 16px;
+}
+
+.circle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background-color: white;
+}
+
+.small-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid white;
+}
+
+.card__card-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.card__card-number {
+    font-size: 2.0rem;
+    text-align: center;
+}
+
+.card__cardholder, .card__card-exp-date {
+    font-size: 1.0rem;
+}
+
+.bar {
+    background: #222;
+    margin-left: -30px;
+    margin-right: -30px;
+    height: 60px;
+    margin-top: 20px;
+}
+
+.cvc-bar {
+    background: #c4c1c1;
+    color: #000;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-right: 40px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 8px;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0);
+		transform: translatey(0px);
+	}
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
