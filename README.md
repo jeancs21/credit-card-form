@@ -1,5 +1,10 @@
 # Animated Credit Card and Form in React
 
+
+![thumbnail-credi-card](https://github.com/jeancs21/credit-card-form/assets/40588173/6a170c6c-6ed3-4d44-9633-8d81d10a89d5)
+
+
+
 This is a React project that consists of a dynamic component that simulates an animated credit card and a form for entering credit card details.
 
 ## Key Features
