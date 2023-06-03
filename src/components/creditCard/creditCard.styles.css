@@ -145,7 +145,18 @@
 
 @media only screen and (max-width: 420px) {
     .card-container {
-        width: 100%;
+        width: 320px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card__card-number {
+        font-size: 1.5rem;
+    }
+
+    .card__cardholder, .card__card-exp-date {
+        font-size: 1.0rem;
     }
 }
 

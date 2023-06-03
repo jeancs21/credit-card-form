@@ -106,6 +106,8 @@ button:hover {
 
     .credit-card {
         min-width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .credit-card__form-container {
