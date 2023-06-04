@@ -61,9 +61,25 @@
 
 .card-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-method img {
+    width: 100px;
+    height: 60px;
+}
+
+.payment-method--hidden {
+    display: none;
+}
+
+.dots {
+    display: flex;
     align-items: center;
     gap: 1rem;
     padding-left: 16px;
+
 }
 
 .circle {

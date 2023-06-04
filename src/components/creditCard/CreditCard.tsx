@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState } from 'react'
 import './creditCard.styles.css'
+import { getCardLogo } from '../utils/cardCompany.util'
 
 type Props = {
   cardNumber: string,
@@ -12,12 +13,6 @@ type Props = {
 
 const CreditCard:FunctionComponent<Props> = (props) => {
 
-  const defaultValues = {
-    cardNumber: "0000 0000 0000 0000"
-  }
-
-  const [cardValues, setCardValues] = useState(defaultValues)
-
   return (
     <>
       <div className={`card-container ${props.isFlipped ? 'flipped' : ''} slide-in`}>
@@ -25,11 +20,16 @@ const CreditCard:FunctionComponent<Props> = (props) => {
           <div className='card-inner'>
             <div className='card-front'>
               <div className='card-header'>
-                <div className='circle'></div>
-                <div className='small-dot'></div>
+                <div className='dots'>
+                  <div className='circle'></div>
+                  <div className='small-dot'></div>
+                </div>
+                <div className={`${getCardLogo(props.cardNumber) ? 'payment-method' : 'payment-method--hidden'}`}>
+                  <img src={getCardLogo(props.cardNumber)} alt='logo' />
+                </div>
               </div>
               <div className='card__card-number'>
-                {props.cardNumber}
+                {props.cardNumber.replace(/\s/g, '').replace(/(.{4})/g, '$1 ')}
               </div>
               <div className='card__card-bottom'>
                 <div className='card__cardholder'>

@@ -11,6 +11,7 @@ const PaymentForm = () => {
     const [cardCvc, setCardCvc] = useState("000")
 
     const [isFlipped, setIsFlipped] = useState(false);
+    
 
 
   return (
@@ -27,11 +28,11 @@ const PaymentForm = () => {
                 />
             </div>
             <div className='form-container'>
-                <form className='form'>
+                <div className='form'>
                     <div className='form__card-number'>
                         <label>Card number</label>
                         <input type='text' placeholder='e.g. 1234 5678 9123 0000'
-                            onChange={(e) => setCardNumber(e.target.value.replace(/\s/g, '').replace(/(.{4})/g, '$1 '))}
+                            onChange={(e) => setCardNumber(e.target.value)}
                             maxLength={16}
                         />
                     </div>
@@ -72,7 +73,7 @@ const PaymentForm = () => {
                     </div>
 
                     <button type='submit'>Confirm</button>
-                </form>
+                </div>
             </div>
         </div>
     </>
