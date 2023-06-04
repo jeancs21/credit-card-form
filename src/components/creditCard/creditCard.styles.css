@@ -71,7 +71,7 @@
 }
 
 .payment-method--hidden {
-    display: none;
+    visibility: hidden
 }
 
 .dots {

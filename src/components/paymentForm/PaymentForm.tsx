@@ -33,7 +33,8 @@ const PaymentForm = () => {
                         <label>Card number</label>
                         <input type='text' placeholder='e.g. 1234 5678 9123 0000'
                             onChange={(e) => setCardNumber(e.target.value)}
-                            maxLength={16}
+                            value={cardNumber.replace(/\s/g, '').replace(/(.{4})/g, '$1 ')}
+                            maxLength={19}
                         />
                     </div>
 

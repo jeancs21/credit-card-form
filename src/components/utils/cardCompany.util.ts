@@ -7,7 +7,7 @@ export const getCardCompany = (cardNumber: string) => {
     }
 
     for (let key in company ) {
-        if (company[key].test(cardNumber)) {
+        if (company[key].test(cardNumber.replace(/\s/g, ''))) {
             return key;
         }
     }
@@ -15,7 +15,7 @@ export const getCardCompany = (cardNumber: string) => {
 }
 
 export const getCardLogo = (cardNumber: string) => {
-    const cardCompany = getCardCompany(cardNumber);
+    const cardCompany = getCardCompany(cardNumber.replace(/\s/g, ''));
     if (cardCompany === 'visa') {
         return paymentMethodLogo.visa;
     } else if (cardCompany === 'mastercard') {

@@ -29,7 +29,7 @@ const CreditCard:FunctionComponent<Props> = (props) => {
                 </div>
               </div>
               <div className='card__card-number'>
-                {props.cardNumber.replace(/\s/g, '').replace(/(.{4})/g, '$1 ')}
+                {props.cardNumber}
               </div>
               <div className='card__card-bottom'>
                 <div className='card__cardholder'>
